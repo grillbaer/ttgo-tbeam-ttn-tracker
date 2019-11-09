@@ -19,7 +19,10 @@
 
 */
 
+#include "configuration.h"
 #include <TinyGPS++.h>
+
+#include "gps.h"
 
 uint32_t LatitudeBinary;
 uint32_t LongitudeBinary;
@@ -59,7 +62,7 @@ void gps_setup() {
     _serial_gps.begin(GPS_BAUDRATE, SERIAL_8N1, GPS_RX_PIN, GPS_TX_PIN);
 }
 
-static void gps_loop() {
+void gps_loop() {
     while (_serial_gps.available()) {
         _gps.encode(_serial_gps.read());
     }
@@ -80,7 +83,7 @@ static void gps_loop() {
         Serial.println(t);
         sprintf(t, "Lng: %f", _gps.location.lng());
         Serial.println(t);
-        sprintf(t, "Alt: %f", altitudeGps);
+        sprintf(t, "Alt: %d", altitudeGps);
         Serial.println(t);
         sprintf(t, "Hdop: %d", hdopGps);
         Serial.println(t);

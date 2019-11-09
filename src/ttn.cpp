@@ -24,11 +24,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+
+#include <lmic.h>
+#include <lmic/oslmic_types.h>
 #include <hal/hal.h>
 #include <SPI.h>
 #include <vector>
+
 #include "configuration.h"
 #include "credentials.h"
+
+#include "ttn.h"
 
 // -----------------------------------------------------------------------------
 // Globals

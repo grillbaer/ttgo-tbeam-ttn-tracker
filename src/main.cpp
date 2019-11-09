@@ -33,6 +33,12 @@ bool pmu_irq = false;
 String baChStatus = "No charging";
 #endif
 
+#include "main.h"
+#include "screen.h"
+#include "ttn.h"
+#include "sleep.h"
+#include "gps.h"
+
 bool ssd1306_found = false;
 bool axp192_found = false;
 

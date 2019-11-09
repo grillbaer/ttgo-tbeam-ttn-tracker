@@ -26,6 +26,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "images.h"
 #include "fonts.h"
 
+#include "configuration.h"
+#include "screen.h"
+#include "gps.h"
+#include "main.h"
+
 #define SCREEN_HEADER_HEIGHT    14
 
 SSD1306Wire * display;
