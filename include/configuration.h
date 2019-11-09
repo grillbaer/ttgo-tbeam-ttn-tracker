@@ -54,7 +54,8 @@ void ttn_register(void (*callback)(uint8_t message));
 
 // If you are having difficulty sending messages to TTN after the first successful send,
 // uncomment the next option and experiment with values (~ 1 - 5)
-//#define CLOCK_ERROR             5
+// Required with TTIG gateway for working OTAA join on SF7!
+#define CLOCK_ERROR             5
 
 #define DEBUG_PORT              Serial      // Serial debug port
 #define SERIAL_BAUD             115200      // Serial debug baud rate
