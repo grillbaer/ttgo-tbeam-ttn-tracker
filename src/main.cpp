@@ -75,6 +75,9 @@ void send() {
 #endif
 
   ttn_cnt(count);
+  // set SF again, is changed otherwise...
+  ttn_sf(LORAWAN_SF);
+  ttn_adr(LORAWAN_ADR);
   ttn_send(txBuffer, sizeof(txBuffer), LORAWAN_PORT, confirmed);
 
   count++;
@@ -106,7 +109,10 @@ void sleep() {
 }
 
 void callback(uint8_t message) {
-  if (EV_JOINING == message) screen_print("Joining TTN...\n");
+  if (EV_JOINING == message) {
+    ttn_sf(DR_SF9);
+    screen_print("Joining TTN...\n");
+  }
   if (EV_JOINED == message) screen_print("TTN joined!\n");
   if (EV_JOIN_FAILED == message) screen_print("TTN join failed\n");
   if (EV_REJOIN_FAILED == message) screen_print("TTN rejoin failed\n");
@@ -266,9 +272,9 @@ void setup() {
   }
 
   ttn_register(callback);
-  ttn_join();
-  ttn_sf(LORAWAN_SF);
   ttn_adr(LORAWAN_ADR);
+  ttn_sf(LORAWAN_SF);
+  ttn_join();
 }
 
 void loop() {
