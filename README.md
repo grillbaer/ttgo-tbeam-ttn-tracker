@@ -1,6 +1,6 @@
 ## TTGO T-Beam Tracker for The Things Network
 
-This is a test fork from [kizniche/ttgo-tbeam-ttn-tracker](https://github.com/kizniche/ttgo-tbeam-ttn-tracker) made compilable with PlatformIO. Better use the original for forking, since the source files were moved around and are not easily mergable any more.
+**This is a test fork from [kizniche/ttgo-tbeam-ttn-tracker](https://github.com/kizniche/ttgo-tbeam-ttn-tracker) made compilable with PlatformIO. Better use the original for forking, since the source files were moved around and are not easily mergable any more.**
 
 Uploads GPS data from the TTGO T-Beam to [The Things Network](https://www.thethingsnetwork.org) (TTN) and [TTN Mapper](https://ttnmapper.org) for tracking and determining signal strength of LoRaWAN gateways and nodes.
 
